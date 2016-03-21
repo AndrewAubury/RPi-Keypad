@@ -5,21 +5,26 @@ import me.Andrew.Keypad.GPIO.GPIOMethords;
 
 public class Main {
 	private static Main instance = null;
-	
-	public Settings set = new Settings();
-	public static Methords Meths = new Methords();
+
+	public static Settings set;
+	public static Methords Meths;
 	public static GPIOMethords GPIOMeths;
-	public Storage store = new Storage();
-	
+	public static Storage store;
+
 	public static void main(String[] args) {
-			Meths.buttonIn.start();
-			GPIOMeths = new GPIOMethords();
+		set = new Settings();
+		store = new Storage();
+		Meths = new Methords();
+		GPIOMeths = new GPIOMethords();
+		Meths.buttonIn.start();
+
 	}
+
 	public static Main getInstance() {
-	      if(instance == null) {
-	         instance = new Main();
-	      }
-	      return instance;
-	   }
-	
+		if (instance == null) {
+			instance = new Main();
+		}
+		return instance;
+	}
+
 }

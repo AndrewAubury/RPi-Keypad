@@ -40,12 +40,10 @@ public class ButtonInput {
 		}
 		return Col;
 	}
-
-	@SuppressWarnings("static-access")
 	private void ButtonListener() {
-		MA.GPIOMeths.setupPins();
-		RowPins = MA.store.RowPins;
-		ColPins = MA.store.ColPins;
+		Main.GPIOMeths.setupPins();
+		RowPins = Main.store.RowPins;
+		ColPins = Main.store.ColPins;
 
 		int Row = 1;
 		int Response = 0;
@@ -67,23 +65,23 @@ public class ButtonInput {
 
 	public void buttonPressEvent(int Row, int Col) {
 		String ButtonPressed = Main.Meths.getButton(Row, Col);
-		if (ButtonPressed == "*") {
+		if (ButtonPressed.equalsIgnoreCase("*")) {
 			System.out.println("Code Logging Started");
-			MA.store.CodeMode = true;
-		} else if (ButtonPressed == "#") {
+			Main.store.CodeMode = true;
+		} else if (ButtonPressed.equalsIgnoreCase("#")) {
 			System.out.println("Code Logging Ended");
 			if (Main.Meths.ComareCodes()) {
 				System.out.println("Code Correct");
 			} else {
 				System.out.println("Code Incorrect");
 			}
-			MA.store.CodeMode = false;
+			Main.store.CodeMode = false;
 		} else {
-			if (MA.store.CodeMode == false) {
+			if (Main.store.CodeMode == false) {
 				System.out.println("Code Logging Not Running");
 			} else {
-				MA.store.CodeEntered = MA.store.CodeEntered + ButtonPressed;
-				System.out.println("Code Entered: " + MA.store.CodeEntered);
+				Main.store.CodeEntered = Main.store.CodeEntered + ButtonPressed;
+				System.out.println("Code Entered: " + Main.store.CodeEntered);
 			}
 		}
 		try {

@@ -17,6 +17,7 @@ public class GPIOMethords {
 	public HashMap<String, GpioPinDigitalInput> ColPins = new HashMap<String, GpioPinDigitalInput>();
 	public HashMap<String, GpioPinDigitalOutput> RowPins = new HashMap<String, GpioPinDigitalOutput>();
 
+	@SuppressWarnings("static-access")
 	public void setupPins() {
 		if (ColPins.isEmpty()) {
 			ColPins.put("1", gpio.provisionDigitalInputPin(settings.Col1));

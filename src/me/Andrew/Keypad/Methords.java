@@ -13,7 +13,7 @@ public class Methords {
 			settings.Code = "1234";
 			return ("1234");
 		} else {
-			if (settings.Code == "") {
+			if (settings.Code.isEmpty()) {
 				settings.Code = "1234";
 				return ("1234");
 			} else {
@@ -28,7 +28,7 @@ public void testButtonListener1(){
 	buttonIn.stop();
 }
 public boolean ComareCodes(){
-	if(MA.store.CodeEntered.equalsIgnoreCase(getCode())){
+	if(Main.store.CodeEntered.equalsIgnoreCase(getCode())){
 		return true;
 	}else{
 		return false;
