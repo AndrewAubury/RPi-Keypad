@@ -41,6 +41,7 @@ public class ButtonInput {
 		return Col;
 	}
 
+	@SuppressWarnings("static-access")
 	private void ButtonListener() {
 		MA.GPIOMeths.setupPins();
 		RowPins = MA.store.RowPins;

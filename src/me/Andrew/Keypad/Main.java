@@ -8,12 +8,12 @@ public class Main {
 	
 	public Settings set = new Settings();
 	public static Methords Meths = new Methords();
-	public GPIOMethords GPIOMeths = new GPIOMethords();
+	public static GPIOMethords GPIOMeths;
 	public Storage store = new Storage();
 	
 	public static void main(String[] args) {
 			Meths.buttonIn.start();
-		
+			GPIOMeths = new GPIOMethords();
 	}
 	public static Main getInstance() {
 	      if(instance == null) {
